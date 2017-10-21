@@ -1,19 +1,11 @@
-function makeRequests(){
-  $.ajax({
-    url: 'http://httpbin.org/get',
-    method: 'GET',
-    dataType: 'json'
-  })
-  .done(function(response){
-    $('p').text(
-      JSON.stringify(response)
-    );
-  })
-  .fail(function(){
-    alert('The API not found');
-  })
-}
-
 $(document).ready(function(){
-  makeRequests();
+  myRequest();
 })
+
+function myRequest(){
+  $.getJSON('http://httpbin.org/gzip')
+    .done(function(response) {
+      alert('The get request is ready, click to proceed!');
+      $('body > p').text(response.headers['User-Agent']);
+    });
+}
