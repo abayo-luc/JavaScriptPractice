@@ -1,0 +1,15 @@
+section#carousel > figure > img {
+  display: none;
+}
+
+section#carousel > figure.visible > img {
+  display: block;
+}
+
+section#carousel > figure > figcaption {
+  display: none;
+}
+
+section#carousel > figure.visible > figcaption {
+  display: block;
+}
