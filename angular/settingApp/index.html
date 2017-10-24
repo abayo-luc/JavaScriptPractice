@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body ng-app="appStore">
+    <div class="header">
+      <div class="container">
+        <h1>App Market</h1>
+      </div>
+    </div>
+
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+        <div ng-repeat="app in apps">
+          <div class="card">
+            <img ng-src="{{app.icon}}">
+            <h2 class="title">{{app.title}}</h2>
+            <p class="developer">{{app.developer}}</p>
+            <p class="price">{{app.price | currency}}</p>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+  
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+
+    <!-- Directives -->
+    <!-- <script src="js/directives/appInfo.js"></script> -->
+
+
+  </body>
+</html>

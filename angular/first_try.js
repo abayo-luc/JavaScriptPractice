@@ -1,6 +1,6 @@
 var module = angular.module('listApp', []);
-var controller = module.controller('listController', initController);
-function initController($scope) {
+ module.controller('listController', 
+ 	function initController($scope) {
     $scope.items = ['First Item'];
     $scope.addItem = function() {
         if ($scope.newItem) {
@@ -9,3 +9,5 @@ function initController($scope) {
         }
     }
 }
+ );
+
