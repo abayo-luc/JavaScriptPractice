@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tickling Page</title>
+</head>
+<body>
+	My age is:
+	<script type="text/javascript">
+		var age = 23;
+		alert(age);
+		var name = "jean luc Abayo";
+		console.log(name.toUpperCase());
+		console.log(name.length)
+		var myArray = ['Abayo', 13, true]
+		myArray[3] = "Jean";
+		myArray.push("luc");     // this will add element at the end of an array
+		myArray.unshift("Ines"); // this will add element to the begining of the array
+		console.log(myArray);
+
+		myArray.pop(); // this will remove the last elemebnt of the array
+		myArray.shift(); // this will remove the first element of the array
+		console.log(myArray);
+
+		// in java script object has value, and value can be any type. for exmaple, value can be an array 
+
+		var person = {
+			name: "Jean Luc",
+			color: ["Green", "Yellow", "Blude"],
+			age: 22,
+			programmer: true,
+			hobies: {footbal: true, baskteball: false}
+		};
+		// here the person is an object with different properties -- like name, color, etc.. -- which has value in different forms: array, integer, string, or boolean. N.B: an boject's property can also be an object (something like a hash inside a hash)
+		console.log(person.name);
+		console.log(person.color[1]);
+		console.log(person['hobies']['footbal']);
+		person.nickname = "Wizz"
+		console.log(person);
+
+		var good = ["Jean Luc", "Abayo"];
+		function showMe(n) {
+			console.log(n);
+		}
+
+		good.forEach(showMe);
+
+		function isMyName(n) {
+			if( n == "Jean Luc") {
+				document.write('My name is' + n);
+			}
+		}
+		good.forEach(isMyName);
+
+		var foo = new Array(100);
+
+		for(var i=0; i< foo.length ; i++){
+			if(i % 5 == 0 && i % 3 == 0 ){
+				document.write('<h3> fizzBuzz</h3>');
+			}
+			else if(i % 5 == 0) {
+				document.write('<h3> fizz</h3>');
+			}	
+			else if (i % 3 == 0) {
+				document.write('<h3> buzz</h3>');
+			}
+			else {
+				document.write(i + '<br>');
+			}
+		}
+
+		// function buzz(numero) {
+		// 	if (numero % 3 == 0) {
+		// 		document.write('<h1>buzz</h1>')
+		// 	}
+		// }
+		// foo.forEach(buzz);
+
+		// var myNumero = [2,4,6]
+
+		// function isEven(n) {
+		// 	return n % 2 == 0;
+		// }
+
+		// myNumero.every(isEven);
+
+		function grow(obj){
+			obj.age ++;
+		}
+
+		grow(person);
+
+
+		// prototype things
+
+		function Car (model, speed, price) {
+			this.model = model;
+			this.speed = speed;
+			this.price = price;
+			this.addvart = function (){
+				return 'Hello, this brand new me' + this.model;
+			}
+		}
+
+		var benz = new Car('Benz', '34 m/h', 7999);
+		console.log(benz.addvart());
+		var aud8 = new Car('aud8', '68 m/h', 890);
+		console.log(aud8.speed);
+
+		function Kid(name,age){
+			this.name = name;
+			this.age = age;
+			this.greeting = function (){
+				return 'Hello! my name is ' + this.name;
+			}
+		}
+
+		function Student(name, age, school){
+			this._proto_ = new Kid(name, age)
+			this.school = school
+		}
+		Kid.prototype.planete = 'Earth';
+		var student1 = new Student('jean luc', 22, 'Kepler');
+		var theName = student1.planete;
+		document.write(theName)
+	</script>
+</body>
+</html>

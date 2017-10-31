@@ -8,6 +8,15 @@ var module = angular.module('listApp', []);
             $scope.newItem = undefined;
         }
     }
+
+    // $scope.removeItem = function(index){
+    // 	alert('you want to remove' + $scope.items[index]);
+    // 	var element = $scope.items[index];
+    // 	if($scope.items.includes(element){
+    // 		$scope.items.unshift(element);
+    // 	});
+
+    // }
 }
  );
 

@@ -3,7 +3,6 @@
     <head>
         <title>HTML Page</title>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
-        <script type="text/javascript" src="first_try.js"></script>
     </head>
     <body ng-controller="listController">
         <h1>List of Items</h1>
@@ -11,6 +10,7 @@
         <ol>
             <li ng-repeat="item in items">
                 {{item}}
+                <button ng-click="removeItem($index)">-</button>
             </li>
         </ol>
         <hr />
@@ -21,5 +21,6 @@
                 <button ng-click="addItem()">&#43;</button>
             </fieldset>
         </form>
+        <script type="text/javascript" src="first_try.js"></script>
     </body>
 </html>
