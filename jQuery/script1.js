@@ -31,12 +31,15 @@ function keyPressHandler(e){
 		$('#list').append('<li>' + $('#item').val() +'</li>');
 		$('#item').val('');
 	}
-}
+};
 
 $('#item').keyup(keyPressHandler);
 
 
 // onclick event that make bolder the text
+$('#title').mouseover(function(){
+	$(this).css('background-color', 'green');
+});
 $('li').mouseover(function(){
 	$(this).css('font-weight','bold');
 });
