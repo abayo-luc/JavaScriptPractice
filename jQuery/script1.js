@@ -13,25 +13,33 @@
 // button.addEventListener('click', clickNumber);
 
 
-var lick = 0;
-
+var nClick = 0;
 function clickHandler(){
-	click++;
-	var spanElement = $('#result');
-	if (click == 1) {
-		spanElement.html = 'once';
+	nClick++;
+	if(nClick == 1) {
+	$('#result').html('once');
 	} else {
-		spanElement.html = click + 'times';
+		$('#result').html(nClick + 'times');
 	}
 }
 
 $('#btn').click(clickHandler);
 
+// input and listing it bellow
 function keyPressHandler(e){
 	if(e.keyCode == 13) {
-		$('#list').append('<li>' + $('#item').val() +'</li>';
+		$('#list').append('<li>' + $('#item').val() +'</li>');
 		$('#item').val('');
 	}
 }
 
 $('#item').keyup(keyPressHandler);
+
+
+// onclick event that make bolder the text
+$('li').mouseover(function(){
+	$(this).css('font-weight','bold');
+});
+$('li').mouseout(function(){
+	$(this).css('font-weight', '');
+});
