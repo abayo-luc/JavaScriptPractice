@@ -83,3 +83,27 @@ $('input[name="species"]').change(function(){
 		$('#speciesSpan').html($(this).val());
 	}
 });
+
+var checkedElements = []
+$('input:checkbox').change(function(){
+	var value = $(this).val()
+	if($(this).prop('checked')){
+		checkedElements.push(value);
+	} else {
+		var index = checkedElements.indexOf(value)
+		if(index != -1){
+			checkedElements.splice(index, 1)
+		}
+	}
+
+	$('#featureSpan').html(' ');
+	for(i=0; i < checkedElements.length; i++) {
+		$('#featureSpan').append(checkedElements[i]);
+		if( i < checkedElements.length - 1) {
+			$('#featureSpan').append(', ');
+		} else {
+			$('#featureSpan').append(' ');
+		}
+
+	}
+});
