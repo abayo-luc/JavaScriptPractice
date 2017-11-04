@@ -37,12 +37,31 @@ $('#item').keyup(keyPressHandler);
 
 
 // onclick event that make bolder the text
-$('#title').mouseover(function(){
+$('#title').click(function(){
 	$(this).css('background-color', 'green');
 });
-$('li').mouseover(function(){
-	$(this).css('font-weight','bold');
+$('ul#highlight').find('li').on({
+	mouseover: function(){
+		$(this).css('font-weight','bold');
+	},
+	mouseleave: function(){
+		$(this).css('font-weight', '');
+	}
 });
-$('li').mouseout(function(){
-	$(this).css('font-weight', '');
-});
+	
+
+
+
+
+// reminding myself how to capture user location
+function userLocation(position){
+	var elements = document.getElementsByClassName('location');
+	elements[0].innerHTML = position.coords.longitude;
+	elements[1].innerHTML = position.coords.latitude;
+}
+
+function findeMe(){
+	navigator.geolocation.getCurrentPosition(userLocation);
+}
+
+findeMe();
