@@ -37,8 +37,13 @@ $('#item').keyup(keyPressHandler);
 
 
 // onclick event that make bolder the text
+var textClick = 1;
 $('#title').click(function(){
-	$(this).css('background-color', 'green');
+	if(textClick % 2 == 0) {
+		$(this).cass('background-color', '#000');
+	} else {
+		$(this).css('background-color', 'green');
+	}
 });
 $('ul#highlight').find('li').on({
 	mouseover: function(){
@@ -65,3 +70,16 @@ function findeMe(){
 }
 
 findeMe();
+
+
+// form manupulation code
+
+$('select[name="choose"]').change(function(){
+	$('#genderSpan').html($(this).val());
+});
+
+$('input[name="species"]').change(function(){
+	if($(this).prop('checked')) {
+		$('#speciesSpan').html($(this).val());
+	}
+});

@@ -4,28 +4,48 @@
 	<title>jQuery Try</title>
 	<script src="jquery-3.2.1.js"></script>
 </head>
-<body>
-	<button id="btn">Click Me</button>
-	<p >you have clicked the button <span id="result">0 times</span></p>
+	<body>
+		<button id="btn">Click Me</button>
+		<p >you have clicked the button <span id="result">0 times</span></p>
 
 
-	<input type="text" name="thing" id="item">
-	<ul>
-		<span id="list"></span>
-	</ul>
+		<input type="text" name="thing" id="item">
+		<ul>
+			<span id="list"></span>
+		</ul>
 
-	<h2 id="title">My list</h2>
-	<ul id="highlight">
-		<li>Dog</li>
-		<li>Cat</li>
-		<li>Caw</li>
-	</ul>
+		<h2 id="title">My list</h2>
+		<ul id="highlight">
+			<li>Dog</li>
+			<li>Cat</li>
+			<li>Caw</li>
+		</ul>
 
-	<p> here is your locaiton details</p>
-	<ul>
-		<li class="location"></li>
-		<li class="location"></li>
-	</ul>
-	<script type="text/javascript" src="script1.js"></script>
-</body>
+		<p> here is your locaiton details</p>
+		<ul>
+			<li class="location"></li>
+			<li class="location"></li>
+		</ul>
+
+
+
+		<form>
+			<select name="choose">
+				<option value="male"> Male</option>	
+				<option value="female">Female</option>
+			</select>
+			<p>
+				<input type="radio" name="species" value="dog">Dog</input>
+				<input type="radio" name="species" value="cat">Cat</input>
+				<input type="radio" name="species" value="bird">Bird</input>
+			</p>
+			<input type="checkbox" value="happy">Happy</input>
+			<input type="checkbox" value="cute">Cute</input>
+			<input type="checkbox" value="smart">Smart</input>
+		</form>
+		<p>
+			I would like to buy a new <span id="featureSpan"></span> <span id="genderSpan"></span> <span id="speciesSpan">Animal</span>
+		</p>
+		<script type="text/javascript" src="script1.js"></script>
+	</body>
 </html>
