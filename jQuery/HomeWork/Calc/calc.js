@@ -14,6 +14,13 @@ $('button.userInput').click(function(){
 			valTwo += $(this).val();
 			$('#display').val(valTwo);
 		}
+	} else if(oper != null && result.length != 0) {
+		if( $(this).val() == 0 && valTwo.length == 0) {
+			$('#display').val(0);
+		} else {
+			valTwo += $(this).val();
+			$('#display').val(valTwo);
+		}
 	} else {
 		if( $(this).val() == 0 && valOne.length == 0) {
 			$('#display').val(0);
@@ -26,8 +33,8 @@ $('button.userInput').click(function(){
 
 // calcuation operator
 $('button.operator').click(function(){
-	if(result.length !=0){
-		valOne = result;
+	if(valOne.length == 0 & valTwo.length != 0){
+		valOne = valTwo;
 		valTwo = '';
 	}
 	oper = $(this);
@@ -52,8 +59,24 @@ $('button#equalsButton').click(function(){
 		}
 		valOne = '';
 		valTwo = '';
-		oper = null;
-	} else {
+	} else if(valOne.length == 0 && result.length != 0){
+		if(oper.attr('id') == 'divideButton'){
+			result = parseInt(result)/ parseInt(valTwo)
+			$('#display').val(result);	
+		} else if( oper.attr('id') == 'multiplyButton'){
+			result = parseInt(result) * parseInt(valTwo)
+			$('#display').val(result);
+		} else if(oper.attr('id') == 'subtractButton') {
+			result = parseInt(result) - parseInt(valTwo)
+			$('#display').val(result)
+		} else if(oper.attr('id')=='addButton'){
+			result = parseInt(result) + parseInt(valTwo)
+			$('#display').val(result)
+		}
+		valOne = '';
+		valTwo = '';	
+	}
+	else {
 		$('#display').val(0);
 	}
 });
