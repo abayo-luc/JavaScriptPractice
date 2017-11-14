@@ -6,7 +6,7 @@ var requestHandler = function(request, response){
 	response.end('Hello, world!');
 }
 
-// This line of code create a server for node
+// This line of code create a server for node and instructe it by calling requestHandler functioni
 var server = http.createServer(requestHandler);
 
 // this function help the serve to prind a message to the console

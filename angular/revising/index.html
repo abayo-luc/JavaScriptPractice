@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Item List</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+</head>
+	<body ng-app="itemList">
+		<div ng-controller="itemController">
+			<label>Message to Bae:</label><br>
+			<textarea ng-model="content" placeholder="Type your message"></textarea>
+			<hr />
+			<p>Dear Bae, </p>
+			<p>{{content}}</p>
+			<h4>Lenght of your user name is {{inputLength}} characters</h4>
+			<button type="button" ng-click="lengthCalc()">Input-length</button>
+		</div>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
