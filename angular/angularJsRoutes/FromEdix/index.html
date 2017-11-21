@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Page</title>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+	<body ng-app="navigationApp">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#list">List</a></li>
+			<li><a href="#detail">Detail</a></li>
+		</ul>
+
+		<div ng-view></div>
+		<!-- adding the script tage with the tamplate related to each route -->
+		<script type="text/ng-tamplate" id="list.html"> List Page</script>
+		<script type="text/ng-tamplate" id="detail.html"> Detail Page</script>
+		<script type="text/ng-tamplate" id="home.html"> Home Page</script>
+	</body>
+</html>
